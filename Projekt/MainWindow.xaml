@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+         Title="MainWindow" Height="450" Width="800" Background="MediumPurple">
+    <Border Background="Black" CornerRadius="20" Margin="20">
+        <Label Content="Strona Główna" Foreground="White" FontSize="50" HorizontalAlignment="Center"></Label>
+    </Border>
 </Window>
