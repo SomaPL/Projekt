@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,30 @@ namespace Projekt
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kubak\Source\Repos\Projekt\Projekt\ProjektDatabase.mdf;Integrated Security=True";
+                SqlConnection sqlcon = new SqlConnection(connectionString);
+                sqlcon.Open();
+                string data = "INSERT INTO tblLogin VALUES (@Username,@Password)";
+                SqlCommand sqlCmd = new SqlCommand(data, sqlcon);
 
+                sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+                sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
+                sqlCmd.ExecuteNonQuery();
+
+                sqlcon.Close();
+
+                txtUsername.Text = "";
+                txtPassword.Password = "";
+                LoginScreen login = new LoginScreen();
+                this.Close();
+                login.Show();
+            }
+
+            catch
+            {
+            }
         }
     }
 }

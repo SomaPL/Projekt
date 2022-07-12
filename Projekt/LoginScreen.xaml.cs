@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +27,31 @@ namespace Projekt
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(); ;
-            this.Close();
-            mainWindow.Show();
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kubak\Source\Repos\Projekt\Projekt\ProjektDatabase.mdf;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(connectionString);
+            sqlcon.Open();
+            string data = "SELECT * FROM tblLogin WHERE Username=@Username AND Password=@Password";
+            SqlCommand sqlCmd = new SqlCommand(data, sqlcon);
+
+            sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
+            sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
+            sqlCmd.ExecuteNonQuery();
+            int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+
+            sqlcon.Close();
+
+            txtUsername.Text = "";
+            txtPassword.Password = "";
+            if (count > 0)
+            {
+                MainWindow mainWindow = new MainWindow();
+                this.Close();
+                mainWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login albo hasło jest niepoprawne");
+            }
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
