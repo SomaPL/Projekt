@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,23 @@ namespace Projekt
         public Rental()
         {
             InitializeComponent();
+            BindingDataGrid();
+        }
+
+        private void BindingDataGrid()
+        {
+            string connectionString = @"Data Source=localhost;Initial Catalog=ProjektDB;Integrated Security=True";
+            SqlConnection sqlcon = new SqlConnection(connectionString);
+            sqlcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM tblRental";
+            cmd.Connection= sqlcon;
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable("Wypożyczalnia");
+
+            dataAdapter.Fill(dataTable);
+
+            Grid1.ItemsSource = dataTable.DefaultView;
         }
     }
 }

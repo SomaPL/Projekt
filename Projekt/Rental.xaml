@@ -9,6 +9,14 @@
       Title="Rental">
 
     <Grid>
-        <TextBlock Text="Wypożyczalnia" HorizontalAlignment="Center" FontSize="32" Foreground="Wheat"></TextBlock>
+        <DataGrid Name="Grid1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id"  MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding CzyDostepny}" Header="Czy Dostępny" MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Marka}" Header="Marka" MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Model}" Header="Model" MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding IleOsob}" Header="Ile osobowy" MinWidth="100"></DataGridTextColumn>
+            </DataGrid.Columns> 
+        </DataGrid>
     </Grid>
 </Page>
