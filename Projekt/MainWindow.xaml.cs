@@ -24,5 +24,15 @@ namespace Projekt
         {
             InitializeComponent();
         }
+
+        private void Rental_Clicked(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Rental();
+        }
+
+        private void Service_Clicked(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Service();
+        }
     }
 }

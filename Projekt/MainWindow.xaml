@@ -7,6 +7,12 @@
         mc:Ignorable="d"
          Title="MainWindow" Height="450" Width="800" Background="MediumPurple">
     <Border Background="Black" CornerRadius="20" Margin="20">
-        <Label Content="Strona Główna" Foreground="White" FontSize="50" HorizontalAlignment="Center"></Label>
+        <Grid>
+            <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+                <Button Content="Wypozyczalnia" MinWidth="350" Margin="20,0,10,0" Click="Rental_Clicked"></Button>
+                <Button Content="Serwis" MinWidth="350" Margin="10,0,20,0" Click="Service_Clicked"></Button>
+            </StackPanel>
+            <Frame x:Name="Main" Margin="0,40,0,0"></Frame>
+        </Grid>
     </Border>
 </Window>
