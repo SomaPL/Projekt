@@ -27,7 +27,7 @@ namespace Projekt
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kubak\Source\Repos\Projekt\Projekt\ProjektDatabase.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=localhost;Initial Catalog=ProjektDB;Integrated Security=True";
             SqlConnection sqlcon = new SqlConnection(connectionString);
             sqlcon.Open();
             string data = "SELECT * FROM tblLogin WHERE Username=@Username AND Password=@Password";

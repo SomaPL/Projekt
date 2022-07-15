@@ -29,7 +29,7 @@ namespace Projekt
         {
             try
             {
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kubak\Source\Repos\Projekt\Projekt\ProjektDatabase.mdf;Integrated Security=True";
+                string connectionString = @"Data Source=localhost;Initial Catalog=ProjektDB;Integrated Security=True";
                 SqlConnection sqlcon = new SqlConnection(connectionString);
                 sqlcon.Open();
                 string data = "INSERT INTO tblLogin VALUES (@Username,@Password)";
