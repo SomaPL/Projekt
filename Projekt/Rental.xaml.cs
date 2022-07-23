@@ -27,7 +27,9 @@ namespace Projekt
             InitializeComponent();
             BindingDataGrid();
         }
-
+        /// <summary>
+        /// Wyświetlenie zawartoście tabeli
+        /// </summary>
         private void BindingDataGrid()
         {
             string connectionString = @"Data Source=localhost;Initial Catalog=ProjektDB;Integrated Security=True";

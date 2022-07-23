@@ -12,7 +12,7 @@
                 <Button Content="Wypozyczalnia" MinWidth="350" Margin="20,0,10,0" Click="Rental_Clicked"></Button>
                 <Button Content="Serwis" MinWidth="350" Margin="10,0,20,0" Click="Service_Clicked"></Button>
             </StackPanel>
-            <Frame x:Name="Main" Margin="0,40,0,0"></Frame>
+            <Frame x:Name="Main" Margin="0,40,0,0" NavigationUIVisibility="Hidden"></Frame>
         </Grid>
     </Border>
 </Window>

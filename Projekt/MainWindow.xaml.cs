@@ -24,12 +24,20 @@ namespace Projekt
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Przełącznie sie na wypożyczalnie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rental_Clicked(object sender, RoutedEventArgs e)
         {
             Main.Content = new Rental();
         }
-
+        /// <summary>
+        /// Przełącznie sie na serwis
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Service_Clicked(object sender, RoutedEventArgs e)
         {
             Main.Content = new Service();

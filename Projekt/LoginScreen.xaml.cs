@@ -25,6 +25,11 @@ namespace Projekt
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Połącznie z bazą oraz zalogowanie się
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             string connectionString = @"Data Source=localhost;Initial Catalog=ProjektDB;Integrated Security=True";
@@ -53,7 +58,11 @@ namespace Projekt
                 MessageBox.Show("Login albo hasło jest niepoprawne");
             }
         }
-
+        /// <summary>
+        /// Przejscie do ekranu rejestracji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             RegisterScreen register = new RegisterScreen();

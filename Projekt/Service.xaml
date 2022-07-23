@@ -9,6 +9,23 @@
       Title="Service">
 
     <Grid>
-        
+        <Grid Margin="10,0,501,10" Background="White">
+            <TextBox Name="txtAuto" HorizontalAlignment="Left" Margin="70,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" Height="16"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Auto:" VerticalAlignment="Top"/>
+            <TextBox Name="txtOpisProblemu" HorizontalAlignment="Left" Margin="70,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" Height="85"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,43,0,0" TextWrapping="Wrap" Text="Opis problemu:" VerticalAlignment="Top" Height="43" Width="55"/>
+            <DatePicker Name="dateDataPrzyjecia" HorizontalAlignment="Left" Margin="70,152,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,144,0,0" TextWrapping="Wrap" Text="Data przyjęcia" VerticalAlignment="Top" Height="40" Width="55"/>
+            <Button Content="Dodaj" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Width="216" Click="AddValues"/>
+        </Grid>
+        <DataGrid Name="Grid1" AutoGenerateColumns="False" Margin="304,0,10,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id"  MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Auto}" Header="Auto" MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding OpisProblemu}" Header="Opis problemu" MinWidth="100"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding DataPrzyjecia}" Header="Data przyjęcia" MinWidth="100"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
+
 </Page>

@@ -24,7 +24,11 @@ namespace Projekt
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Połącznie z bazą oraz dodanie nowej osoby
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             try
